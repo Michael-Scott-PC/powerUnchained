@@ -8,7 +8,10 @@
         <meta name="viewport" content="initial-scale=1">
         <script>
             function openMenu(){
-            document.getElementById('mobiledropdown').classList.toggle("open");
+                document.getElementById('mobiledropdown').classList.toggle("open");
+            }
+            function transformX(x){
+                x.classList.toggle("change");
             }
         </script>
         <style type="text/css">
@@ -32,8 +35,6 @@
             }
             div.headercontent{
                 display: block;
-                /*display: flex;
-                flex-wrap: nowrap;*/
                 border-bottom: solid 1px rgba(0,0,0,.3);
                 background-color: rgba(208,41,41,.8);
                 position: fixed;
@@ -78,6 +79,17 @@
                 display: inline-block;
                 border: none;
                 margin-top: 6px;
+            }
+            .change .icon-bar1{
+                -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+                transform: rotate(-45deg) translate(-10px, 10px);
+            }
+            .change .icon-bar2{
+                opacity: 0;
+            }
+            .change .icon-bar3{
+                -webkit-transform: rotate(45deg) translate(-2px,-3px);
+                transform: rotate(45deg) translate(-2px,-3px)
             }
             span{
                 display: block;
@@ -133,18 +145,14 @@
                 color: #FFFFFF;
                 border: none;
             }
-            li>a{
-                margin-top: -5px;
-            }
             a:hover{
-                background-color: rgba(208,41,41,.9)
+                background-color: rgba(208,41,41,.9);
             }
             .squatvideo-background{
                 display: inline-block;
                 background-color: rgb(208,41,41);
                 width: 100%;
                 margin: 0;
-                font-family: serif, times, impact;
                 position: relative;
                 z-index: -100;
                 margin-top: 48px;
@@ -225,37 +233,77 @@
                 text-align: center;
                 margin-top: -2px;
             }
-            @media screen and (min-width: 1050px) {
+            @media screen and (min-width: 1025px) {
                 div span{
                     display: none;
                 }
                 div.headercontent{
-                    display: inline-block;
-                    height: 15%;
-                    width: 100%;
+                    display: block;
+                    border: none;
                 }
                 h1{
                     display: inline-block;
+                    width: 95%;
                     text-align: center;
                 }
                 div#mobiledropdown{
-                    display: inline-block;
+                    display: block;
+                    width: 100%;
+                    height: 8%;
+                    margin-top: -1px;
                 }
                 ul{
                     display: inline-block;
                     width: 100%;
+                    text-align: center;
                 }
                 ul li{
                     display: inline-block;
-                    width: 20%
+                    width: 20%;
+                    height: 100%;
+                    border: none;
+                    margin: -2px;
+                    margin-left: -1px;
                 }
                 ul li a{
                     display: inline-block;
-                    width: 20%;
+                    width: 100%;
+                    border: none;
+                    
                 }
+                div.login-container{
+                    border: none;
+                    width: 5%;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
                 }
-                i a img.loginavatar{
-                    display: none;
+                div.login-container:hover{
+                    background-color: rgb(154,33,33);
+                }
+                img.login-avatar{
+                    display: inline-block;
+                    border: none;
+                    width: 60%;
+                    height: 70%;
+                    margin: 5px;
+                    margin-left: 12px;
+                }
+                ul li:hover{
+                    background-color: rgb(154,33,33);
+                }
+                a:hover{
+                    background-color: rgb(154,33,33);
+                }
+                .squatvideo-background{
+                display: inline-block;
+                background-color: rgb(208,41,41);
+                width: 100%;
+                margin: 0;
+                font-family: serif, times, impact;
+                position: relative;
+                z-index: -100;
+                margin-top: 98px;
             }
         </style> 
         <title>Power Unchained</title>
@@ -272,15 +320,15 @@
                    </i>
                </div>
                <div onclick="openMenu()" class="navbar-container">
-                    <div class="hamburger-container">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                    <div class="hamburger-container" onclick="transformX(this)">
+                        <span class="icon-bar1"></span>
+                        <span class="icon-bar2"></span>
+                        <span class="icon-bar3"></span>
                     </div>
                     <div id="mobiledropdown" class="closed">
                         <nav class= "navmenu">    
                             <ul class="navlist">
-                                <li><a href="powerUnchained3.html">Home</a></li>
+                                <li><a href="powerUnchained8.html">Home</a></li>
                                 <li><a href="rankings.html">Rankings</a></li>
                                 <li><a href="squat.html">Squat</a></li>
                                 <li><a href="bench.html">Bench</a></li>

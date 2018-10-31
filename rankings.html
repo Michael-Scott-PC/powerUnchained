@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1">
+        <script>
+            function openMenu(){
+            document.getElementById('mobiledropdown').classList.toggle("open");
+            }        
+        </script>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                outline: none;
+                box-sizing: border-box;
+            }
+            .mobile{
+            margin: 0;
+            font-family: 'open_sansregular', Impact, serif;
+            font-weight: 100;
+            background-color: rgb(208,41,41);
+            height: auto !important;
+            height: 100%;
+            min-height: 100%;
+            width: 100%;
+            min-width: 100%;
+            max-width: 480px;
+            }
+            div.headercontent{
+                display: block;
+                border-bottom: solid 1px rgba(0,0,0,.3);
+                background-color: rgba(208,41,41,.8);
+                position: fixed;
+                top: 0;
+                min-width: 100%;
+                margin: 0;
+                z-index: 100;
+            } 
+              h1{
+                display: inline-block;
+                font-family: 'open_sansregular', Impact, serif;
+                font-weight: normal;
+                font-size: 1.6rem;
+                color: #FFFFFF;
+                font-variant-caps: small-caps;
+                margin: 8px;
+                margin-left: 20px;
+                width: 65%;
+            }
+            div.login-container{
+                display: inline-block;
+                position: absolute;
+                top: 15px;
+                right: 50px;
+                border: none;
+            }
+            img.login-avatar{
+                display: inline-block;
+                width: 1.3em;
+                height: 1.3em;
+                margin-left: 1px;
+                border: none; 
+            }
+            div.navbar-container{
+                display: inline-block;
+                border: none;
+                position: absolute;
+                top: 0;
+                right: 3px;
+                height: 100%;
+            }
+            div.hamburger-container{
+                display: inline-block;
+                border: none;
+                margin-top: 6px;
+            }
+            span{
+                display: block;
+                width: 27px;
+                height: 4px;
+                background-color: #FFFFFF;
+                border-radius: 10px;
+                -o-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                margin: 5px 6px 5px 8px;
+            }
+            div#mobiledropdown{
+                border-bottom: solid 1px rgba(0,0,0,.3);
+                border-left: solid 1px rgba(0,0,0,.3);
+                border-right: solid 1px rgba(0,0,0,.3);
+                position: fixed;
+                z-index: 100;
+                width: 40%;
+                height: 40%;
+                top: 48px;
+                right: 0px;
+                background-color: rgba(208,41,41,.8);
+            }
+            .closed{
+                display: none;
+            }
+            .open{
+                display: block;
+            }
+            nav.navmenu{
+                border: none;
+                height: 100%;
+            }
+            ul.navlist{
+                border: none;
+                height: 100%;
+            }
+            ul{
+                list-style: none;
+            }
+            li{
+                position: relative;
+                text-align: center;
+                height: 20%;
+                border-bottom: solid 1px rgba(0,0,0,.2);
+            }
+            ul li a{
+                position: relative;
+                top: 12px;
+                text-decoration: none;
+                color: #FFFFFF;
+                border: none;
+            }
+            li>a{
+                margin-top: -5px;
+            }
+            a:hover{
+                background-color: rgba(208,41,41,.9)
+            }
+            div.table-container{
+                max-height: 100%;
+                height: 100%;
+                position: relative;
+                border: none;
+                top: 50px;
+            }
+            img.rankings-chart{
+                display: block;
+                width: 100%;
+                margin: 0;
+                position: relative;
+            }
+            img[src$='rankings.PNG']{
+                max-height: 100%;
+                height: 100%;
+            }
+            div.rankings-info{
+                display: block;
+                position: relative;
+            }
+            div.para-container{
+                display: block;
+                position: relative;
+                border: none;
+                max-height: 100%;
+                height: 100%;
+                top: 50px;
+            }
+            p{
+                display: flex;
+                background-color: rgb(208,41,41);
+                font-family: 'bookman', 'garamond',  serif;
+                font-weight: 100;
+                font-size: 1rem;
+                color: #FFFFFF;
+                border: none;
+                border-color: #000000;
+                margin: 0px;
+            }
+            p.rankings-paragraph{
+                padding: 20px;
+                border: solid;
+                border-color: #800020;
+                margin: 40px;
+                margin-top: 20px;
+                max-height: 100%;
+                height: 100%;
+            }
+            footer{
+                display: block;
+                background-color: rgb(208,41,41);
+                font-size: .75em;
+                text-align: center;
+                margin-top: -2px;
+                font-family: "Times New Roman", Times, serif; 
+            }
+            
+            /*@media screen and (min-width: 1025px) {
+                div span{
+                    display: none;
+                }
+                div.headercontent{
+                    display: block;
+                    border: none;
+                    z-index: 100;
+                }
+                h1{
+                    display: inline-block;
+                    width: 95%;
+                    text-align: center;
+                }
+                div#mobiledropdown{
+                    display: inline-block;
+                    width: 100%;
+                    height: 8%;
+                    margin-top: -1px;
+                }
+                ul{
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                }
+                ul li{
+                    display: inline-block;
+                    width: 20%;
+                    height: 100%;
+                    border: none;
+                    margin: -2px;
+                    margin-left: -1px;
+                }
+                ul li a{
+                    display: inline-block;
+                    width: 100%;
+                    border: none;
+                    
+                }
+                div.login-container{
+                    border: none;
+                    width: 5%;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                }
+                div.login-container:hover{
+                    background-color: rgb(154,33,33);
+                }
+                img.login-avatar{
+                    display: inline-block;
+                    border: none;
+                    width: 60%;
+                    height: 70%;
+                    margin: 5px;
+                    margin-left: 13px;
+                }
+                ul li:hover{
+                    /*background-color: rgba(208,41,41,1);
+                    background-color: rgb(154,33,33);
+                }
+                a:hover{
+                    background-color: rgb(154,33,33);
+                }
+                /*img.rankings-chart{
+                    display: block;
+                    background-color: rgb(208,41,41);
+                    width: 100%;
+                    margin: 0;
+                    position: relative;
+                    z-index: -100;
+                    top: 95px;
+                }
+                img.rankings-chart{
+                    top: 95px;
+                }
+                div.rankings-info{
+                    
+                }
+                footer{
+                    display: block;
+                }
+            }*/
+        </style>
+        <title>Rankings</title>
+    </head>
+    <body class="mobile">
+        <header>
+            <div class="headercontent">
+                <h1>Powerlifting Rankings</h1>
+                <div class="login-container">
+                   <i>
+                       <a href="userLogin.html">
+                           <img src="images/whiteAvatar32.png" alt="login avatar" class="login-avatar">
+                       </a>
+                   </i>
+                </div>
+                <div onclick="openMenu()" class="navbar-container">
+                    <div class="hamburger-container">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </div>
+                    <div id="mobiledropdown" class="closed">
+                        <nav class= "navmenu">    
+                            <ul class="navlist">
+                                <li><a href="powerUnchained8.html">Home</a></li>
+                                <li><a href="rankings.html">Rankings</a></li>
+                                <li><a href="squat.html">Squat</a></li>
+                                <li><a href="bench.html">Bench</a></li>
+                                <li><a href="deadlift.html">Deadlift</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="rankings-info">
+            <div class="table-container">
+                <img src="images/rankings.PNG" alt="overall wilks rankings table" class="rankings-chart">
+            </div>
+            <div class="para-container">
+                <p class="rankings-paragraph">
+                    The above table is the current overall wilks rankings for all sexes of powerlifters.  What is a "wilks"?  The Wilks Coefficient or Wilks Formula is a coefficient that can be used to measure the strength of a powerlifter against other powerlifters despite the different weights of the lifters.
+                </p>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <br>
+        <br>
+        <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    </footer>
+</html>

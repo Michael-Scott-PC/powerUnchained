@@ -5,7 +5,10 @@
         <meta name="viewport" content="initial-scale=1">
         <script>
             function openMenu(){
-            document.getElementById('mobiledropdown').classList.toggle("open");
+                document.getElementById('mobiledropdown').classList.toggle("open");
+            }
+            function transformX(x){
+                x.classList.toggle("change");
             }
         </script>
         <style>
@@ -73,6 +76,17 @@
                 display: inline-block;
                 border: none;
                 margin-top: 6px;
+            }
+            .change .icon-bar1{
+                -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+                transform: rotate(-45deg) translate(-10px, 10px);
+            }
+            .change .icon-bar2{
+                opacity: 0;
+            }
+            .change .icon-bar3{
+                -webkit-transform: rotate(45deg) translate(-2px,-3px);
+                transform: rotate(45deg) translate(-2px,-3px)
             }
             span{
                 display: block;
@@ -269,10 +283,10 @@
                    </i>
                </div>
                 <div onclick="openMenu()" class="navbar-container">
-                    <div class="hamburger-container">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                    <div class="hamburger-container" onclick="transformX(this)">
+                        <span class="icon-bar1"></span>
+                        <span class="icon-bar2"></span>
+                        <span class="icon-bar3"></span>
                     </div>
                     <div id="mobiledropdown" class="closed">
                         <nav class= "navmenu">    
